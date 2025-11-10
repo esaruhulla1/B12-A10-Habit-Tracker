@@ -3,46 +3,52 @@ import { FaBrain, FaClock, FaSmile, FaChartLine } from "react-icons/fa";
 const WhyBuildHabits = () => {
   const benefits = [
     {
-      icon: <FaBrain className="text-primary text-4xl mb-3" />,
+      icon: <FaBrain className="text-white text-3xl" />,
       title: "Better Focus",
-      description: "Develop habits that enhance your concentration and productivity daily."
+      description: "Develop habits that enhance your concentration and productivity daily.",
+      color: "from-[#f47000] to-[#ffa500]"
     },
     {
-      icon: <FaSmile className="text-successGreen text-4xl mb-3" />,
+      icon: <FaSmile className="text-white text-3xl" />,
       title: "Reduced Stress",
-      description: "Consistent habits help reduce anxiety and create a balanced lifestyle."
+      description: "Consistent habits help reduce anxiety and create a balanced lifestyle.",
+      color: "from-[#10b981] to-[#34d399]"
     },
     {
-      icon: <FaClock className="text-primary text-4xl mb-3" />,
+      icon: <FaClock className="text-white text-3xl" />,
       title: "Time Management",
-      description: "Build routines that help you manage your time efficiently every day."
+      description: "Build routines that help you manage your time efficiently every day.",
+      color: "from-[#f47000] to-[#ffb347]"
     },
     {
-      icon: <FaChartLine className="text-successGreen text-4xl mb-3" />,
+      icon: <FaChartLine className="text-white text-3xl" />,
       title: "Personal Growth",
-      description: "Track your progress and improve yourself steadily with each habit."
+      description: "Track your progress and improve yourself steadily with each habit.",
+      color: "from-[#10b981] to-[#6ee7b7]"
     }
   ];
 
   return (
-    <section className="py-16 bg-offWhite dark:bg-darkGreen">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold mb-6 text-darkGreen dark:text-offWhite">
+        <h2 className="text-4xl font-bold mb-4 text-gray-900">
           Why Build Habits?
         </h2>
-        <p className="mb-12 text-darkGreen/70 dark:text-offWhite/70 max-w-2xl mx-auto">
+        <p className="mb-16 text-gray-700 max-w-2xl mx-auto">
           Consistent habits can transform your life by improving productivity, mental health, and overall well-being. Here are some key benefits:
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="bg-lightGray dark:bg-paleGreen rounded-lg p-6 shadow hover:shadow-lg transition"
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300"
             >
-              <div className="flex justify-center">{benefit.icon}</div>
-              <h3 className="text-xl font-semibold mb-2 text-darkGreen dark:text-offWhite">{benefit.title}</h3>
-              <p className="text-darkGreen/70 dark:text-offWhite/70">{benefit.description}</p>
+              <div className={`w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br ${benefit.color} flex items-center justify-center`}>
+                {benefit.icon}
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">{benefit.title}</h3>
+              <p className="text-gray-700">{benefit.description}</p>
             </div>
           ))}
         </div>
