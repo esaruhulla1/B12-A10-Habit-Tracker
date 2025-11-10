@@ -8,6 +8,7 @@ import Home from './Pages/Home.jsx';
 import Login from './Pages/Login.jsx';
 import SingUp from './Pages/SingUp.jsx';
 import AuthProvider from './Provider/AuthProvider.jsx';
+import PriveteRoute from './PriveteRoute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -19,8 +20,16 @@ const router = createBrowserRouter([
         Component: Home
       },
       {
-        path: '/',
-        element: <p>hello</p>
+        path: '/habits',
+        element: <p>all haibits</p>
+      },
+      {
+        path: '/add-habit',
+        element: <PriveteRoute><p>add habit</p></PriveteRoute>
+      },
+      {
+        path: '/my-habit',
+        element: <PriveteRoute><p>my habit</p></PriveteRoute>
       },
       {
         path: '/',

@@ -9,9 +9,9 @@ const Header = () => {
     
     const links = <>
         <li className='underline-offset-3 text-[15px]'><NavLink to="/">Home</NavLink></li>
-        <li className='underline-offset-3 text-[15px]'><NavLink to="/">Habits</NavLink></li>
-        <li className='underline-offset-3 text-[15px]'><NavLink to="/">Add Habit</NavLink></li>
-        <li className='underline-offset-3 text-[15px]'><NavLink to="/">My Habits</NavLink></li>
+        <li className='underline-offset-3 text-[15px]'><NavLink to="/habits">Habits</NavLink></li>
+        <li className='underline-offset-3 text-[15px]'><NavLink to="/add-habit">Add Habit</NavLink></li>
+        <li className='underline-offset-3 text-[15px]'><NavLink to="/my-habit">My Habits</NavLink></li>
 
     </>
     return (
