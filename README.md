@@ -4,7 +4,7 @@
 #b2c6a5
 #364436
 
-
+client side ok
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
