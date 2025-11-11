@@ -28,7 +28,7 @@ const Banner = () => {
   ];
 
   return (
-    <div className="w-full relative">
+    <div className="container mx-auto relative">
       <Swiper
         modules={[Navigation, Autoplay, Pagination]}
         navigation={true}
