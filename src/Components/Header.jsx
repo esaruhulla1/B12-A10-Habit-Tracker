@@ -46,8 +46,10 @@ const Header = () => {
                     </div>
 
                     <div className='flex items-center gap-2'>
-                        <img className='max-w-[60px] -ml-4' src={Header_logo_2} alt="logo" />
-                        <Link to="/" className="btn btn-ghost text-xl">Habit Tracker</Link>
+                        {/* <img className='max-w-[60px] -ml-4' src={Header_logo_2} alt="logo" /> */}
+                        <Link to="/" className="btn btn-ghost  -ml-2 text-xl">
+                        <img className='max-w-[60px] -ml-8' src={Header_logo_2} alt="logo" />
+                        <span className='-ml-2 -mb-2'>Habit Tracker</span></Link>
                     </div>
                 </div>
 
