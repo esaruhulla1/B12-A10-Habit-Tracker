@@ -13,6 +13,7 @@ import Habits from './Pages/Habits.jsx';
 import AddHabit from './Pages/AddHabit.jsx';
 import MyHabits from './Pages/MyHabits.jsx';
 import UpdateHabit from './Pages/UpdateHabit.jsx';
+import HabitDetails from './Pages/HabitDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: '/update/:id',
         element: <PriveteRoute><UpdateHabit></UpdateHabit></PriveteRoute>
+      },
+      {
+        path: '/habit-details/:id',
+        element: <PriveteRoute><HabitDetails></HabitDetails></PriveteRoute>
       },
       {
         path: '/',

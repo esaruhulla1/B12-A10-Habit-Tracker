@@ -65,6 +65,37 @@ const MyHabits = () => {
     };
 
     // 🔹 Mark as Complete (prevent same-day duplicate)
+    // const handleMarkComplete = async (habit) => {
+    //     const today = new Date();
+    //     const formattedDate = today
+    //         .toLocaleDateString("en-GB")
+    //         .split("/")
+    //         .join("-"); // dd-mm-yyyy
+
+    //     if (habit.completionHistory.includes(formattedDate)) {
+    //         Swal.fire("Already Completed!", "You already marked this today.", "info");
+    //         return;
+    //     }
+
+    //     const updatedHistory = [...habit.completionHistory, formattedDate];
+
+    //     const res = await fetch(`http://localhost:3000/habits/${habit._id}`, {
+    //         method: "PATCH",
+    //         headers: { "Content-Type": "application/json" },
+    //         body: JSON.stringify({ completionHistory: updatedHistory }),
+    //     });
+
+    //     if (res.ok) {
+    //         setHabits((prev) =>
+    //             prev.map((h) =>
+    //                 h._id === habit._id ? { ...h, completionHistory: updatedHistory } : h
+    //             )
+    //         );
+    //         Swal.fire("Great!", "Marked as completed for today!", "success");
+    //     }
+    // };
+
+    // 🔹 Mark as Complete (prevent same-day duplicate)
     const handleMarkComplete = async (habit) => {
         const today = new Date();
         const formattedDate = today
@@ -72,28 +103,36 @@ const MyHabits = () => {
             .split("/")
             .join("-"); // dd-mm-yyyy
 
+        // 🔸 প্রথমে UI-level check
         if (habit.completionHistory.includes(formattedDate)) {
             Swal.fire("Already Completed!", "You already marked this today.", "info");
             return;
         }
 
-        const updatedHistory = [...habit.completionHistory, formattedDate];
-
-        const res = await fetch(`http://localhost:3000/habits/${habit._id}`, {
+        // 🔸 Server call to update using $addToSet
+        const res = await fetch(`http://localhost:3000/habits/complete/${habit._id}`, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ completionHistory: updatedHistory }),
+            body: JSON.stringify({ date: formattedDate }),
         });
 
-        if (res.ok) {
+        const data = await res.json();
+
+        if (data.success) {
+            // 🔸 Update local state immediately
             setHabits((prev) =>
                 prev.map((h) =>
-                    h._id === habit._id ? { ...h, completionHistory: updatedHistory } : h
+                    h._id === habit._id
+                        ? { ...h, completionHistory: [...h.completionHistory, formattedDate] }
+                        : h
                 )
             );
             Swal.fire("Great!", "Marked as completed for today!", "success");
+        } else {
+            Swal.fire("Already Completed!", "You already marked this today.", "info");
         }
     };
+
 
     if (loading) return <p className="text-center mt-10">Loading habits...</p>;
 

@@ -58,7 +58,7 @@ const HabitCard = ({ habit }) => {
                 <div className="flex justify-between items-center pt-4">
                     <p className="text-xs text-gray-400">📅 {createdDate}</p>
                     <Link
-                        to={`/habit/${habit._id}`}
+                        to={`/habit-details/${habit._id}`}
                         className="px-5 py-2  hover:underline underline-offset-3 hover:text-[#30c38d] font-semibold text-sm transition-all duration-300"
                     >
                         View Details
