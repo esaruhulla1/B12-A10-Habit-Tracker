@@ -10,6 +10,7 @@ import SingUp from './Pages/SingUp.jsx';
 import AuthProvider from './Provider/AuthProvider.jsx';
 import PriveteRoute from './PriveteRoute.jsx';
 import Habits from './Pages/Habits.jsx';
+import AddHabit from './Pages/AddHabit.jsx';
 
 const router = createBrowserRouter([
   {
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/add-habit',
-        element: <PriveteRoute><p>add habit</p></PriveteRoute>
+        element: <PriveteRoute><AddHabit></AddHabit></PriveteRoute>
       },
       {
         path: '/my-habit',
