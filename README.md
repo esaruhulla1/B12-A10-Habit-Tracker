@@ -1,23 +1,37 @@
-#096B68 #129990 #FFFBDE #90D1CA
+# 🌿 Habit Tracker
 
-#dfe2e1
-#b2c6a5
-#364436
+**Live Site:** 
+https://habit-tracker-client-by-esa.netlify.app/
+---
 
-client side ok
-# React + Vite
+## 🧭 About This Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+We all have goals — but building habits that stick is hard.  
+**Habit Tracker** is my small attempt to make that easier.  
+It helps you create, track, and maintain daily habits in a simple and motivating way.  
+Whether you’re trying to wake up early, study regularly, or just drink more water — this app keeps you on track.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Key Features
 
-## React Compiler
+- ✅ **Create & Manage Habits:** Add new habits, update them, or delete when needed.  
+- 🔔 **Reminders:** Set a specific time so you never forget your daily goals.  
+- 🔥 **Track Your Streak:** Stay motivated by seeing your completion history grow.  
+- 🎯 **Category Filters:** Easily organize habits by category (Morning, Work, Fitness, etc.).  
+- 📱 **Responsive UI:** Works smoothly on mobile, tablet, and desktop.  
+- 🎨 **Clean & Modern Design:** Simple interface with a soothing color theme.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ⚙️ Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Purpose | Tools |
+|----------|-------|
+| Frontend | React.js, Vite, Tailwind CSS |
+| Backend | Node.js, Express.js |
+| Database | MongoDB Atlas |
+| Authentication | Firebase |
+| Hosting | Vercel (client) & Render (server) |
+
+---
