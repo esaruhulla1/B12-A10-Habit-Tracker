@@ -20,7 +20,7 @@ const HabitDetails = () => {
   // Fetch habit details
   const fetchHabit = async () => {
     try {
-      const res = await fetch(`http://localhost:3000/habit/${id}`);
+      const res = await fetch(`https://habit-tracker-server-g4ntwvrz4-esas-projects-36859535.vercel.app/habit/${id}`);
       const data = await res.json();
       setHabit(data);
       setLoading(false);
@@ -106,7 +106,7 @@ const HabitDetails = () => {
 
     setUpdating(true);
     try {
-      const res = await fetch(`http://localhost:3000/habits/complete/${id}`, {
+      const res = await fetch(`https://habit-tracker-server-g4ntwvrz4-esas-projects-36859535.vercel.app/habits/complete/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ date: today }),

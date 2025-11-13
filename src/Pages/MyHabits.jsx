@@ -14,7 +14,7 @@ const MyHabits = () => {
     // 🔹 Fetch user's own habits
     useEffect(() => {
         if (!user?.email) return;
-        fetch(`http://localhost:3000/habits/${user.email}`)
+        fetch(`https://habit-tracker-server-g4ntwvrz4-esas-projects-36859535.vercel.app/${user.email}`)
             .then((res) => res.json())
             .then((data) => {
                 setHabits(data);
@@ -45,7 +45,7 @@ const MyHabits = () => {
     const calculateStreak = (history) => {
         if (!history || history.length === 0) return 0;
 
-        // Convert to Date objects & sort ascending (oldest first)
+        
         const sorted = history
             .map((d) => new Date(d.split("-").reverse().join("-")))
             .sort((a, b) => a - b);
@@ -61,20 +61,19 @@ const MyHabits = () => {
                 currentStreak++;
                 streak = Math.max(streak, currentStreak);
             } else {
-                // ⛔️ Break streak if a day is missed — reset counter
+                
                 currentStreak = 1;
             }
         }
 
-        // 🧩 এখন শুধু সর্বশেষ ধারাবাহিক অংশটা বের করা হবে
-        // মানে শেষ দিক থেকে যত দিন টানা চলেছে
+
         const reversed = sorted.reverse();
         let latestStreak = 1;
         for (let i = 1; i < reversed.length; i++) {
             const diff =
                 (reversed[i - 1] - reversed[i]) / (1000 * 60 * 60 * 24);
             if (diff === 1) latestStreak++;
-            else break; // break যদি একদিন মিস হয়
+            else break; 
         }
 
         return latestStreak;
@@ -93,7 +92,7 @@ const MyHabits = () => {
             confirmButtonText: "Yes, delete it!",
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:3000/habits/delete/${id}`, {
+                fetch(`https://habit-tracker-server-g4ntwvrz4-esas-projects-36859535.vercel.app/${id}`, {
                     method: "DELETE",
                 })
                     .then((res) => res.json())
@@ -121,7 +120,7 @@ const MyHabits = () => {
         }
 
         const res = await fetch(
-            `http://localhost:3000/habits/complete/${habit._id}`,
+            `https://habit-tracker-server-g4ntwvrz4-esas-projects-36859535.vercel.app/${habit._id}`,
             {
                 method: "PATCH",
                 headers: { "Content-Type": "application/json" },

@@ -10,7 +10,7 @@ const UpdateHabit = () => {
 
     
     useEffect(() => {
-        fetch(`http://localhost:3000/habit/${id}`)
+        fetch(`https://habit-tracker-server-g4ntwvrz4-esas-projects-36859535.vercel.app/${id}`)
             .then((res) => res.json())
             .then((data) => {
                 setHabit(data);
@@ -28,7 +28,7 @@ const UpdateHabit = () => {
     
     const handleUpdate = (e) => {
         e.preventDefault();
-        fetch(`http://localhost:3000/habits/update/${id}`, {
+        fetch(`https://habit-tracker-server-g4ntwvrz4-esas-projects-36859535.vercel.app/${id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({

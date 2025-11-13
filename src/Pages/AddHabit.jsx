@@ -30,7 +30,7 @@ const AddHabit = () => {
         };
 
         try {
-            const response = await fetch("http://localhost:3000/habits/add", {
+            const response = await fetch("https://habit-tracker-server-g4ntwvrz4-esas-projects-36859535.vercel.app/habits/add", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(newHabit),

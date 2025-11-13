@@ -33,7 +33,7 @@ const Featured = () => {
 
     if (error)
         return (
-            <ErrorPage></ErrorPage>
+            <p className="text-center text-red-500">Somthigs is wrong</p>
         );
 
     return (
